@@ -1,0 +1,52 @@
+# ragtest example evaluation config
+# Run with: ragtest run examples/basic_eval.yaml --verbose
+
+# Path to the dataset file (relative to this config file)
+dataset_path: basic_eval.yaml
+
+# This file doubles as both config and dataset for simplicity.
+# In production, you'd split config and dataset into separate files.
+
+name: knowledge-base-eval
+
+documents:
+  - path: docs/manual.md
+    id: manual
+  - path: docs/faq.md
+    id: faq
+
+questions:
+  - question: "How do I reset my password?"
+    expected_answer: "Go to Settings > Security > Reset Password"
+    source_ids: ["faq"]
+  - question: "What are the system requirements?"
+    expected_answer: "Python 3.11+, 8GB RAM, NVIDIA GPU recommended"
+    source_ids: ["manual"]
+  - question: "How do I contact support?"
+    expected_answer: "Email support@example.com or use the Help menu"
+    source_ids: ["faq"]
+
+# Retriever configuration
+retriever:
+  type: tfidf        # Built-in TF-IDF retriever (no dependencies)
+  top_k: 5
+
+# Chunking strategy
+chunking:
+  strategy: fixed    # "fixed", "sentence", or "paragraph"
+  chunk_size: 500
+  overlap: 50
+
+# Generator (none = use expected answers for generation metrics)
+generator:
+  type: none
+
+# Metrics to compute
+metrics:
+  - recall@5
+  - precision@5
+  - mrr
+  - ndcg@5
+  - faithfulness
+  - relevance
+  - completeness
