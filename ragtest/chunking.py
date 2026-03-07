@@ -71,7 +71,6 @@ def fixed_size_chunks(
         )
     if overlap < 0:
         raise ValueError(f"overlap must be non-negative, got {overlap}")
-        return []
 
     chunks: list[Chunk] = []
     step = chunk_size - overlap
