@@ -1,4 +1,5 @@
 # ragtest
+[![CI](https://github.com/dbhavery/ragtest/actions/workflows/ci.yml/badge.svg)](https://github.com/dbhavery/ragtest/actions/workflows/ci.yml)
 
 **RAG evaluation suite -- benchmark retrieval accuracy, generation quality, and chunking strategies.**
 
