@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "RAG evaluation suite — benchmark retrieval accuracy, generation quality, and chunking strategies."
 readme = "README.md"
 license = {text = "MIT"}
-authors = [{name = "Donald Havery", email = "dbhavery@gmail.com"}]
+authors = [{name = "Donald Havery", email = "dbhavery@users.noreply.github.com"}]
 requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 3 - Alpha",
